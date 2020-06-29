@@ -15,15 +15,6 @@ phases:
       - $(aws ecr get-login --no-include-email --region $AWS_REGION)
   build:
     commands:
-      - echo building and testing dev images...
-      - sudo docker-compose up -d --build
-      - sudo docker-compose exec -T users python -m pytest "project/tests" -p no:warnings --cov="project"
-      - sudo docker-compose exec -T users flake8 project
-      - sudo docker-compose exec -T users black project --check
-      - sudo docker-compose exec -T users /bin/sh -c "isort project/*/*.py --check-only"
-      - sudo docker-compose exec -T client npm run lint
-      - sudo docker-compose exec -T client npm run prettier:check
-      - sudo docker-compose exec -T client npm run prettier:write
       - echo building prod images...
       - >
         docker build \
