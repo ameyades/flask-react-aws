@@ -2,6 +2,7 @@ version: 0.2
 
 env:
   variables:
+    AWS_ACCOUNT_ID: "578371775322"
     AWS_REGION: "us-west-1"
     REACT_APP_USERS_SERVICE_URL: "http://flask-react-alb-138661029.us-west-1.elb.amazonaws.com"
 
