@@ -16,14 +16,14 @@ phases:
   build:
     commands:
       - echo building and testing dev images...
-      - docker-compose up -d --build
-      - docker-compose exec -T users python -m pytest "project/tests" -p no:warnings --cov="project"
-      - docker-compose exec -T users flake8 project
-      - docker-compose exec -T users black project --check
-      - docker-compose exec -T users /bin/sh -c "isort project/*/*.py --check-only"
-      - docker-compose exec -T client npm run lint
-      - docker-compose exec -T client npm run prettier:check
-      - docker-compose exec -T client npm run prettier:write
+      - sudo docker-compose up -d --build
+      - sudo docker-compose exec -T users python -m pytest "project/tests" -p no:warnings --cov="project"
+      - sudo docker-compose exec -T users flake8 project
+      - sudo docker-compose exec -T users black project --check
+      - sudo docker-compose exec -T users /bin/sh -c "isort project/*/*.py --check-only"
+      - sudo docker-compose exec -T client npm run lint
+      - sudo docker-compose exec -T client npm run prettier:check
+      - sudo docker-compose exec -T client npm run prettier:write
       - echo building prod images...
       - >
         docker build \
