@@ -1,0 +1,5 @@
+aws iam:
+user: ameyades
+access key id: AKIAYNKNE5NNFHWLUVPK
+secret access key: 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
+password: )'o|gcNAI1up
